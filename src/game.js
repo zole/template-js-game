@@ -27,3 +27,7 @@ export function update(delta: number) {
 
     // render();
 }
+
+export function onTouchDown() {
+    
+}
