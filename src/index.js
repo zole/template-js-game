@@ -1,5 +1,7 @@
 import hdify from 'hd-canvas';
 
+import * as game from './game';
+
 function setupCanvas() {
     let body = document.body;
     body.style.margin = "0";
@@ -22,11 +24,16 @@ function setupCanvas() {
 }
 
 function main() {
-    let canvas = setupCanvas();
-    let ctx = canvas.getContext('2d');
+    const canvas = setupCanvas();
 
-    function frame() {
-        ctx.clearRect(0, 0, 1, 1);
+    game.init(canvas);
+
+    let lastTime;
+    function frame(time) {
+        let deltaTime = Math.min(lastTime ? (time - lastTime) / 1000 : 0, 0.25);
+        game.update(deltaTime);
+        lastTime = time;
+
         requestAnimationFrame(frame);
     }
     requestAnimationFrame(frame);
