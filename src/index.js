@@ -22,7 +22,7 @@ function setupCanvas() {
 
     if (game.onTouchDown) {
         canvas.addEventListener('mousedown', mousedown,  false);
-        // canvas.addEventListener('touchstart', touchstart, false);
+        canvas.addEventListener('touchstart', touchstart, false);
 
     }
     // canvas.addEventListener('mousemove'   onmousemove,  false);
@@ -36,11 +36,14 @@ function setupCanvas() {
 function mousedown(ev: MouseEvent) {
     // FIXME: Jake cautions about relying on clientX/Y
     // http://codeincomplete.com/posts/javascript-game-foundations-player-input/
+    game.onTouchDown(ev.clientX, ev.clientY);
     ev.preventDefault();
 }
 
 function touchstart(ev: TouchEvent) {
-
+    let t = ev.touches[0];
+    game.onTouchDown(t.clientX, t.clientY);
+    ev.preventDefault();
 }
 
 function main() {
