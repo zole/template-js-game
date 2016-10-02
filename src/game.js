@@ -25,9 +25,17 @@ export function update(delta: number) {
         // advanceGameState();
     }
 
-    // render();
+    render();
 }
 
-export function onTouchDown() {
-    
+function render() {
+}
+
+let screenWidth = 1, screenHeight = 1;
+export function onResize(width: number, height: number) {
+    screenWidth = width;
+    screenHeight = height;
+}
+
+export function onTouchDown(x: number, y: number) {
 }

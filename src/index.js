@@ -15,6 +15,8 @@ function setupCanvas() {
     // Handle window resize
     function resize() {
         canvas = hdify(canvas, window.innerWidth, window.innerHeight);
+        game.onResize(window.innerWidth, window.innerHeight);
+        window.scroll(0, 0);
     }
     resize();
     window.addEventListener('resize', () => requestAnimationFrame(resize));
@@ -41,6 +43,7 @@ function mousedown(ev: MouseEvent) {
 }
 
 function touchstart(ev: TouchEvent) {
+    // TODO: handle touches for real
     let t = ev.touches[0];
     game.onTouchDown(t.clientX, t.clientY);
     ev.preventDefault();
