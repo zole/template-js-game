@@ -23,7 +23,5 @@
     "flow-bin": "^0.32.0",
     "uglifyify": "^3.0.2"
   },
-  "dependencies": {
-    "hd-canvas": "^0.1.6"
-  }
+  "dependencies": {}
 }

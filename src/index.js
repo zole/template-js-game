@@ -1,5 +1,3 @@
-import hdify from 'hd-canvas';
-
 import * as game from './game';
 
 function setupCanvas() {
@@ -9,16 +7,22 @@ function setupCanvas() {
     body.style.overflow = "hidden";
     body.style.background = "yellow";
 
-    let canvas = document.createElement('canvas');
+    let canvas = document.createElement('canvas'),
+        canvasPixelRatio = pixelRatio(canvas);
     canvas.style.background = "black";
 
     // Handle window resize
     function resize() {
-        canvas = hdify(canvas, window.innerWidth, window.innerHeight);
-        game.onResize(window.innerWidth, window.innerHeight);
-        window.scroll(0, 0);
+        let width = window.innerWidth, height = window.innerHeight;
+
+        canvas.width  = width  * canvasPixelRatio;
+        canvas.height = height * canvasPixelRatio;
+        canvas.style.width  = width + "px";
+        canvas.style.height = height + "px";
+
+        game.onResize(canvas, width, height, canvasPixelRatio);
+        window.scroll(0, 0); // in case we've rotated the screen on iOS or something
     }
-    resize();
     window.addEventListener('resize', () => requestAnimationFrame(resize));
 
 
@@ -31,6 +35,7 @@ function setupCanvas() {
     // canvas.addEventListener('touchmove',  ontouchmove,  false);
 
     body.appendChild(canvas);
+    resize();
 
     return canvas;
 }
@@ -63,6 +68,19 @@ function main() {
         requestAnimationFrame(frame);
     }
     requestAnimationFrame(frame);
+}
+
+function pixelRatio(canvas) {
+    let ctx = canvas.getContext('2d');
+    let dpr = window.devicePixelRatio || 1,
+        bsr = ctx.webkitBackingStorePixelRatio ||
+                ctx.mozBackingStorePixelRatio    ||
+                ctx.msBackingStorePixelRatio     ||
+                ctx.oBackingStorePixelRatio      ||
+                ctx.backingStorePixelRatio       ||
+                1;
+
+    return dpr / bsr;
 }
 
 main();
