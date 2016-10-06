@@ -56,6 +56,10 @@ export default class Display {
         return name;
     }
 
+    bulkLoadPNG(stuff: {string:string}) {
+        Object.keys(stuff).forEach(k => this.loadPNG(k, stuff[k]));
+    }
+
     clear(color: ?string) {
         // this._ctx.save();
         if (color) {
