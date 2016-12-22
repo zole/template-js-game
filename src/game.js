@@ -2,17 +2,12 @@
 
 const FRAME_DUR = 1/60;
 
-let game;
+let display;
 
-export function init(canvas: HTMLCanvasElement) {
-    let ctx = canvas.getContext('2d');
-    if (!ctx) {
-        throw new Error("Couldn't get rendering context");
-    }
-
-    game = {
-        ctx: ctx,
-    };
+export function init(theDisplay: Display) {
+    display = theDisplay;
+    // display.onResize = onResize;
+    onResize();
 }
 
 let accrued = 0;
@@ -31,10 +26,7 @@ export function update(delta: number) {
 function render() {
 }
 
-let screenWidth = 1, screenHeight = 1;
-export function onResize(width: number, height: number) {
-    screenWidth = width;
-    screenHeight = height;
+export function onResize() {
 }
 
 export function onTouchDown(x: number, y: number) {
