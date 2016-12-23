@@ -57,7 +57,9 @@ export default class Display {
     }
 
     bulkLoadPNG(stuff: {string:string}) {
-        Object.keys(stuff).forEach(k => this.loadPNG(k, stuff[k]));
+        for(let k in stuff) {
+            this.loadPNG(k, stuff[k])
+        }
     }
 
     clear(color: ?string) {

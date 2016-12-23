@@ -29,10 +29,13 @@ module.exports = {
             "error",
             "unix"
         ],
-        "quotes": 0,
+        "quotes": 0/*[
+            "warn",
+            "double"
+        ]*/,
         "semi": [
-            "error",
-            "always"
+            "warn",
+            "never"
         ],
         "no-eval": ["error"],
         "strict": "warn",
