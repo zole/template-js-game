@@ -15,7 +15,9 @@
     "singleQuote": true
   },
   "devDependencies": {
-    "eslint": "^3.6.0",
+    "@typescript-eslint/eslint-plugin": "^5.20.0",
+    "@typescript-eslint/parser": "^5.20.0",
+    "eslint": "^8.14.0",
     "prettier": "^2.6.2"
   }
 }
