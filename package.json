@@ -15,9 +15,13 @@
     "singleQuote": true
   },
   "devDependencies": {
+    "@tsconfig/recommended": "^1.0.1",
     "@typescript-eslint/eslint-plugin": "^5.20.0",
     "@typescript-eslint/parser": "^5.20.0",
     "eslint": "^8.14.0",
     "prettier": "^2.6.2"
+  },
+  "dependencies": {
+    "typescript": "^4.6.3"
   }
 }
