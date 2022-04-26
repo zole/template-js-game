@@ -1,5 +1,6 @@
 .DS_Store
 node_modules/
 dist/
-progress shots
-notes
+unused/
+notes/
+*.code-workspace
