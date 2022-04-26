@@ -30,6 +30,7 @@
     "webpack-dev-server": "^4.8.1"
   },
   "dependencies": {
+    "async-preloader": "^6.1.2",
     "howler": "^2.2.3",
     "keycode": "^2.2.1"
   }
