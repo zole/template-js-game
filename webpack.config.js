@@ -3,13 +3,22 @@ const package = require('./package.json')
 const AssetConfigWebpackPlugin = require('asset-config-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin').CleanWebpackPlugin
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const WebpackFavicons = require('webpack-favicons')
 
 const os = require('os')
+const path = require('path')
 
 const config = {
     mode: 'development', // TODO
 
     entry: package.main,
+
+    output: {
+        // why is this necessary? it's the default, but some plugins complain when it's not set
+        path: path.join(__dirname, 'dist'),
+        // publicPath: '/~media/'
+ 
+    },
 
     devServer: {
         hot: true,
@@ -28,6 +37,15 @@ const config = {
             meta: {
                 viewport:
                     'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0',
+            },
+        }),
+        new WebpackFavicons({
+            src: './favicon.svg',
+            path: '',
+            background: '#fff',
+            theme_color: '#fff',
+            icons: {
+                favicons: true,
             },
         }),
     ],
