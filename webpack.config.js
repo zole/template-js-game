@@ -54,6 +54,10 @@ const config = {
 config.module = {
     rules: [
         {
+            test: /\.(glb|gltf)$/,
+            type: 'asset',
+        },
+        {
             // .ts, .tsx, .d.ts
             test: /\.(tsx?|d\.ts)$/,
             use: [
