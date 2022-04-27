@@ -4,6 +4,7 @@
         "target": "es2016",
         "module": "esnext",
         "moduleResolution": "node",
+        "allowJs": true,
         // "preserveSymlinks": true,                         /* Disable resolving symlinks to their realpath. This correlates to the same flag in node. */
     },
     "include": ["**/*"]
