@@ -1,4 +1,9 @@
-const package = require('./package.json')
+// TODO: https://webpack.js.org/configuration/configuration-languages/#typescript
+
+const {
+    main: packageName,
+    description: packageDescription,
+} = require('./package.json')
 
 const AssetConfigWebpackPlugin = require('asset-config-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin').CleanWebpackPlugin
@@ -11,17 +16,20 @@ const path = require('path')
 const config = {
     mode: 'development', // TODO
 
-    entry: package.main,
+    entry: packageName,
 
     output: {
         // why is this necessary? it's the default, but some plugins complain when it's not set
         path: path.join(__dirname, 'dist'),
         // publicPath: '/~media/'
- 
     },
 
     devServer: {
         hot: true,
+    },
+
+    resolve: {
+        extensions: ['.ts', '.js'],
     },
 
     plugins: [
@@ -33,7 +41,7 @@ const config = {
         new CleanWebpackPlugin(),
         // Generate a base html file and injects all generated css and js files
         new HtmlWebpackPlugin({
-            title: package.description,
+            title: packageDescription,
             meta: {
                 viewport:
                     'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0',
@@ -53,6 +61,14 @@ const config = {
 
 config.module = {
     rules: [
+        {
+            test: /\.aseprite$/,
+            use: [
+                {
+                    loader: require.resolve('./lib/level_loader.js'),
+                },
+            ],
+        },
         {
             test: /\.(glb|gltf)$/,
             type: 'asset',
