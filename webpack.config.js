@@ -13,6 +13,8 @@ const WebpackFavicons = require('webpack-favicons')
 const os = require('os')
 const path = require('path')
 
+// TODO: determine this from the CLI
+const isProduction = false
 const config = {
     mode: 'development', // TODO
 
@@ -31,6 +33,7 @@ const config = {
     resolve: {
         extensions: ['.ts', '.js'],
     },
+    devtool: isProduction ? 'source-map' : 'eval-source-map',
 
     plugins: [
         // File loader configuration for .woff and .woff2 files
