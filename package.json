@@ -6,8 +6,9 @@
   "private": "true",
   "main": "./src/index.ts",
   "scripts": {
-    "start": "webpack-dev-server",
-    "build": "webpack --mode production"
+    "start": "webpack serve",
+    "start:firefox": "npm start -- --open-app-name 'Firefox'",
+    "build": "webpack"
   },
   "prettier": {
     "tabWidth": 4,
