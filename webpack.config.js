@@ -25,7 +25,7 @@ const config = {
     },
 
     devServer: {
-        hot: true,
+        hot: false,
     },
 
     resolve: {
