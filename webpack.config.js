@@ -1,9 +1,15 @@
+<<<<<<< HEAD
 // TODO: https://webpack.js.org/configuration/configuration-languages/#typescript
 
 const {
     main: packageName,
     description: packageDescription,
 } = require('./package.json')
+=======
+// const webpack = require('webpack')
+
+const package = require('./package.json')
+>>>>>>> b92b361 (For consistency, use isProduction to set mode)
 
 const AssetConfigWebpackPlugin = require('asset-config-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin').CleanWebpackPlugin
@@ -15,8 +21,9 @@ const path = require('path')
 
 // TODO: determine this from the CLI
 const isProduction = false
+
 const config = {
-    mode: 'development', // TODO
+    mode: isProduction ? 'production' : 'development',
 
     entry: packageName,
 
@@ -27,6 +34,7 @@ const config = {
     },
 
     devServer: {
+        // liveReload: true,
         hot: false,
     },
 
