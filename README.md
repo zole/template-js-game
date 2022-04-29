@@ -18,7 +18,7 @@ Personal template for ES6-based games
   git pull templ template
   git switch template
   git cherry-pick <commit hash>
-  git push templ
+  git push templ  # if you are me
 ```
 
 ### Pick up changes from the template for a project
@@ -26,5 +26,5 @@ Personal template for ES6-based games
 ```shell
   git fetch templ
   git switch main
-  git rebase templ/template  # and good luck to you
+  git rebase -i template  # and good luck to you
  ```
