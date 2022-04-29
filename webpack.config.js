@@ -1,15 +1,9 @@
-<<<<<<< HEAD
 // TODO: https://webpack.js.org/configuration/configuration-languages/#typescript
 
 const {
     main: packageName,
     description: packageDescription,
 } = require('./package.json')
-=======
-// const webpack = require('webpack')
-
-const package = require('./package.json')
->>>>>>> b92b361 (For consistency, use isProduction to set mode)
 
 const AssetConfigWebpackPlugin = require('asset-config-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin').CleanWebpackPlugin
