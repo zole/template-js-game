@@ -79,6 +79,10 @@ config.module = {
             type: 'asset',
         },
         {
+            test: /\.(glsl|vs|fs|vert|frag)$/,
+            loader: 'webpack-glsl-loader'
+        },
+        {
             // .ts, .tsx, .d.ts
             test: /\.(tsx?|d\.ts)$/,
             use: [
