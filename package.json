@@ -7,7 +7,7 @@
   "main": "./src/index.ts",
   "scripts": {
     "start": "webpack serve",
-    "start:firefox": "npm start -- --open-app-name 'Firefox'",
+    "firefox": "npm run start -- --open-app-name 'Firefox Developer Edition'",
     "build": "webpack"
   },
   "prettier": {
@@ -17,6 +17,8 @@
   },
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.1",
+    "@types/lodash-es": "^4.17.6",
+    "@types/three": "^0.140.0",
     "@typescript-eslint/eslint-plugin": "^5.20.0",
     "@typescript-eslint/parser": "^5.20.0",
     "asset-config-webpack-plugin": "^2.0.3",
@@ -36,6 +38,8 @@
     "async-preloader": "^6.1.2",
     "howler": "^2.2.3",
     "keycode": "^2.2.1",
-    "ow": "^0.28.1"
+    "lodash-es": "^4.17.21",
+    "ow": "^0.28.1",
+    "three": "^0.140.0"
   }
 }
