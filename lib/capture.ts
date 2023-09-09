@@ -43,7 +43,11 @@ function determineBestCodec() {
         .find((mime) => MediaRecorder.isTypeSupported(mime))
 }
 
-function extension(mimeType: string) {
+function extension(mimeType: string | undefined) {
+    if (!mimeType) {
+        // TODO: if we can't figure out a mime type, what file extension should we use?
+        return '.bin'
+    }
     return mimeType.split(';')[0].split('/')[1]
 }
 
@@ -52,6 +56,10 @@ function toMiliseconds(minutes: number) {
     return minutes * 60 * 1000
 }
 
+/** Takes a canvas, captures video from it, and downloads the resulting video
+ * in the best video format supported by the browser when done.
+ *
+ * @todo Does this need to be a class? */
 export default class Capture {
     private recorder: MediaRecorder | undefined
     private canvas: HTMLCanvasElement | undefined
@@ -62,6 +70,7 @@ export default class Capture {
         return this.recorder?.state === 'recording'
     }
 
+    /** How long the capture has been going on so far, in seconds */
     get duration() {
         if (this.startTime) {
             const ms = +new Date() - +this.startTime!
@@ -71,6 +80,12 @@ export default class Capture {
         }
     }
 
+    /**
+     * Start the recording or stop and save the recording. The arguments are
+     * required but have no effect when stopping.
+     * @param canvas The canvas to capture from
+     * @param filePrefix A string to form the beginning of the video filename
+     */
     toggleRecording(canvas: HTMLCanvasElement, filePrefix = 'capture') {
         const { recorder } = this
         if (!recorder) {
@@ -78,14 +93,14 @@ export default class Capture {
                 this.bestCodec = determineBestCodec()
             }
 
-            const date = new Date()
-            this.startTime = date
+            this.startTime = new Date()
 
             const localDate = new Date(
-                date.getTime() - toMiliseconds(date.getTimezoneOffset()),
+                this.startTime.getTime() -
+                    toMiliseconds(this.startTime.getTimezoneOffset()),
             )
 
-            const mimeType = this.bestCodec // we think/hope `unassigned` will mean "dealer's choice"
+            const mimeType = this.bestCodec || '' // we think/hope `unassigned` will mean "dealer's choice"
             const fileName = `${filePrefix}_${localDate.toISOString()}.${extension(
                 mimeType,
             )}`
@@ -101,6 +116,9 @@ export default class Capture {
             })
 
             let blobs: Blob[] = []
+            // TODO: Based on what this function does, we should only get a single blob, but the MediaRecorder could deliver more than one if we specify a 'timeslice' so we should support >1 blob
+            // https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/dataavailable_event
+
             recorder.ondataavailable = (e) => {
                 if (e.data.size > 0) {
                     blobs.push(e.data)
