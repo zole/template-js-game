@@ -34,6 +34,7 @@
     "@game-input/adapter-mouse": "^1.1.2",
     "@game-input/adapter-touch": "^1.1.2",
     "@game-input/core": "^1.1.2",
+    "@thi.ng/dl-asset": "^2.3.42",
     "howler": "^2.2.3",
     "ow": "^1.1.1",
     "three": "^0.156.1"
