@@ -1,18 +1,68 @@
-declare module '*.svg' {
-    const content: any
+interface Window {
+    // Put global variables here, e.g.:
+    // state?: State
+}
+
+//#region File types
+
+// Text
+
+declare module '*.txt' {
+    const content: string
     export default content
 }
 
-declare module '*.gltf' {
+declare module '*.css' {
     const content: string
     export default content
+}
+
+// Audio
+
+declare module '*.mp3' {
+    const url: string
+    export default url
+}
+
+declare module '*.m4a' {
+    const url: string
+    export default url
+}
+
+declare module '*.webm' {
+    const url: string
+    export default url
+}
+
+// Images
+
+declare module '*.png' {
+    const url: string
+    export default url
+}
+
+declare module '*.jpg' {
+    const url: string
+    export default url
+}
+
+declare module '*.svg' {
+    const content: SVGElement
+    export default content
+}
+
+// WebGL
+
+declare module '*.gltf' {
+    const url: string
+    export default url
 }
 
 declare module '*.glb' {
-    const content: string
-    export default content
+    const url: string
+    // const content: string
+    export default url
 }
-
 
 declare module '*.vert' {
     const content: string
@@ -23,3 +73,5 @@ declare module '*.frag' {
     const content: string
     export default content
 }
+
+//#endregion
