@@ -1,42 +1,44 @@
 {
-  "name": "FIXME",
-  "version": "1.0.0",
-  "description": "FIXME",
-  "author": "M. Zole",
-  "private": "true",
-  "source": "src/index.html",
-  "scripts": {
-    "start": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "mkcert": "mkcert -install && mkcert -cert-file ${npm_package_name}.crt -key-file ${npm_package_name}.key ${npm_package_name}.local $(hostname).local localhost 127.0.0.1",
-    "clean": "rimraf dist/"
-  },
-  "prettier": {
-    "tabWidth": 4,
-    "semi": false,
-    "singleQuote": true
-  },
-  "devDependencies": {
-    "@gltf-transform/cli": "^3.6.0",
-    "@tsconfig/recommended": "^1.0.2",
-    "@types/three": "^0.156.0",
-    "prettier": "^3.0.3",
-    "rimraf": "^5.0.1",
-    "typescript": "^5.2.2",
-    "vite": "^4.4.9",
-    "vite-plugin-top-level-await": "^1.3.1",
-    "vite-plugin-wasm": "^3.2.2"
-  },
-  "dependencies": {
-    "@game-input/adapter-gamepad": "^1.1.2",
-    "@game-input/adapter-keyboard": "^1.1.2",
-    "@game-input/adapter-mouse": "^1.1.2",
-    "@game-input/adapter-touch": "^1.1.2",
-    "@game-input/core": "^1.1.2",
-    "@thi.ng/dl-asset": "^2.3.42",
-    "howler": "^2.2.3",
-    "ow": "^1.1.1",
-    "three": "^0.156.1"
-  }
+    "name": "FIXME",
+    "version": "1.0.0",
+    "description": "FIXME",
+    "author": "FIXME",
+    "private": "true",
+    "source": "src/index.html",
+    "scripts": {
+        "start": "vite",
+        "build": "vite build",
+        "clean": "rimraf dist/",
+        "preview": "vite preview",
+        "mkcert": "mkcert -install && mkcert -cert-file ${npm_package_name}.crt -key-file ${npm_package_name}.key ${npm_package_name}.local $(hostname).local localhost 127.0.0.1",
+        "serve": "http-server dist/ -p 443 --ssl --cert ${npm_package_name}.crt --key ${npm_package_name}.key -g",
+        "open": "open -b org.chromium.Chromium --new --args --profile-directory='Development' --enable-precise-memory-info $"
+    },
+    "prettier": {
+        "tabWidth": 4,
+        "semi": false,
+        "singleQuote": true
+    },
+    "devDependencies": {
+        "@gltf-transform/cli": "^3.6.0",
+        "@tsconfig/recommended": "^1.0.2",
+        "@types/three": "^0.156.0",
+        "prettier": "^3.0.3",
+        "rimraf": "^5.0.1",
+        "typescript": "^5.2.2",
+        "vite": "^4.4.9",
+        "vite-plugin-top-level-await": "^1.3.1",
+        "vite-plugin-wasm": "^3.2.2"
+    },
+    "dependencies": {
+        "@game-input/adapter-gamepad": "^1.1.2",
+        "@game-input/adapter-keyboard": "^1.1.2",
+        "@game-input/adapter-mouse": "^1.1.2",
+        "@game-input/adapter-touch": "^1.1.2",
+        "@game-input/core": "^1.1.2",
+        "@thi.ng/dl-asset": "^2.3.42",
+        "howler": "^2.2.3",
+        "ow": "^1.1.1",
+        "three": "^0.156.1"
+    }
 }
