@@ -18,14 +18,25 @@
 
             canvas#mainDisplay {
                 background: black;
+
+                position: absolute;
+                top: 0;
+                left: 0;
                 width: 100vw;
                 height: 100vh;
+
                 touch-action: none;
+            }
+
+            canvas:focus-visible {
+                /* Setting a tabindex gives the canvas an outline when it has keyboard focus, which is redundant in a game */
+                outline: none;
             }
         </style>
     </head>
     <body>
-        <canvas id="mainDisplay"></canvas>
+        <!-- Tabindex 0 allows the user to tab to the canvas-->
+        <canvas id="mainDisplay" tabindex="0"></canvas>
         <script type="module" src="src/main.ts"></script>
     </body>
 </html>
