@@ -24,7 +24,8 @@ Personal template for ES6-based games
 ### Pick up changes from the template for a project
 
 ```shell
-  git fetch templ
+  git switch template
+  git pull templ
   git switch main
   git rebase -i template  # and good luck to you
  ```
