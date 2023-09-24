@@ -10,5 +10,5 @@
         "lib": ["es2019", "DOM", "WebWorker"]
     },
     "include": ["**/*"],
-    "exclude": ["**/unused/**/*", "dist/**/*"]
+    "exclude": ["**/unused/**/*", "dist/**/*", "./vite.config.js"]
 }
