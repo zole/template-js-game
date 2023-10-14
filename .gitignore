@@ -1,7 +1,14 @@
 .DS_Store
 node_modules/
+*.code-workspace
+
 dist/
 unused/
 backups/
 notes/
-*.code-workspace
+refs/
+
+# Blender's backup files
+assets/*.blend?*
+# Exported GLTFs, since they should be re-exportable
+assets/*.glb

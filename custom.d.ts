@@ -1,9 +1,10 @@
-interface Window {
-    // Put global variables here, e.g.:
-    // state?: State
-}
 
 //#region File types
+
+declare module '*?raw' {
+    const content: string
+    export default content
+}
 
 // Text
 
