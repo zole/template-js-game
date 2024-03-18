@@ -1,10 +1,9 @@
-/** @type {import('vite').UserConfig} */
-
 // required by wasm plugin
 import topLevelAwait from 'vite-plugin-top-level-await'
 import wasm from 'vite-plugin-wasm'
 import mkcert from 'vite-plugin-mkcert'
 
+/** @type {import('vite').UserConfig} */
 export default {
     // config options
     assetsInclude: ['**/*.gltf', '**/*.glb'],
