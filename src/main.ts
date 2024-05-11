@@ -1,5 +1,7 @@
-const ow = require('ow/dev-only').default
+
+import invariant from "tiny-invariant"
 
 console.warn('Put your game code here!')
 
-ow("GameBucket", ow.null.message("Oh no!"))
+
+invariant(false, "There is no actual game")

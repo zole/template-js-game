@@ -1,22 +1,20 @@
+/// <reference types="vite/client" />
 
-//#region File types
+// File types
 
 declare module '*?raw' {
     const content: string
     export default content
 }
 
+// TODO: figure out which of these is covered by vite/client
+
 // Text
 
-declare module '*.txt' {
-    const content: string
-    export default content
-}
-
-declare module '*.css' {
-    const content: string
-    export default content
-}
+// declare module '*.txt' {
+//     const content: string
+//     export default content
+// }
 
 // Audio
 
@@ -37,20 +35,20 @@ declare module '*.webm' {
 
 // Images
 
-declare module '*.png' {
-    const url: string
-    export default url
-}
+// declare module '*.png' {
+//     const url: string
+//     export default url
+// }
 
-declare module '*.jpg' {
-    const url: string
-    export default url
-}
+// declare module '*.jpg' {
+//     const url: string
+//     export default url
+// }
 
-declare module '*.svg' {
-    const content: SVGElement
-    export default content
-}
+// declare module '*.svg' {
+//     const content: SVGElement
+//     export default content
+// }
 
 // WebGL
 
@@ -74,5 +72,3 @@ declare module '*.frag' {
     const content: string
     export default content
 }
-
-//#endregion
