@@ -42,7 +42,7 @@
         "typescript": "^5.4.2",
         "vite": "^5.1.6",
         "vite-plugin-gltf": "^4.0.0",
-        "vite-plugin-mkcert": "^1.17.4",
+        "vite-plugin-mkcert": "^1.17.5",
         "vite-plugin-top-level-await": "^1.4.1",
         "vite-plugin-wasm": "^3.3.0"
     }
