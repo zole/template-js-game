@@ -31,7 +31,7 @@
     },
     "devDependencies": {
         "@gltf-transform/cli": "^4.0.0",
-        "@tsconfig/recommended": "^1.0.3",
+        "@tsconfig/recommended": "^1.0.6",
         "@types/color": "^3.0.6",
         "@types/d3-ease": "^3.0.2",
         "@types/lodash-es": "^4.17.12",
