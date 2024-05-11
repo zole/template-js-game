@@ -21,7 +21,7 @@
         "tabWidth": 4
     },
     "dependencies": {
-        "@thi.ng/dl-asset": "^2.3.75",
+        "@thi.ng/dl-asset": "^2.3.81",
         "color": "^4.2.3",
         "d3-ease": "^3.0.1",
         "gamebucket": "workspace:^",
