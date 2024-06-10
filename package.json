@@ -37,7 +37,7 @@
         "@types/react": "^18.3.3",
         "@types/three": "^0.165.0",
         "@vitejs/plugin-react": "^4.2.1",
-        "prettier": "^3.2.5",
+        "prettier": "^3.3.1",
         "rimraf": "^5.0.7",
         "typescript": "^5.4.5",
         "vite": "^5.2.11",
