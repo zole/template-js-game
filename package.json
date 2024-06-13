@@ -36,7 +36,7 @@
         "@types/lodash-es": "^4.17.12",
         "@types/react": "^18.3.3",
         "@types/three": "^0.165.0",
-        "@vitejs/plugin-react": "^4.2.1",
+        "@vitejs/plugin-react": "^4.3.1",
         "prettier": "^3.3.2",
         "rimraf": "^5.0.7",
         "typescript": "^5.4.5",
