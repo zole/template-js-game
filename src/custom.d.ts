@@ -1,5 +1,11 @@
 /// <reference types="vite/client" />
 
+// defined by Vite
+
+declare const IS_PRODUCTION: boolean
+declare const IS_DISTRIBUTION: boolean
+declare const __BUILD__: string
+
 // File types
 
 declare module '*?raw' {

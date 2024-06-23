@@ -7,7 +7,8 @@
 
         "allowJs": true,
         "resolveJsonModule": true,
-        "lib": ["esnext", "DOM", "WebWorker"]
+        "lib": ["esnext", "DOM", "WebWorker"],
+        "types": ["vite-plugin-glsl/ext"]
     },
     "references": [{ "path": "../lib" }],
     "include": ["**/*.ts"],
