@@ -16,9 +16,11 @@ export default defineConfig((env) => ({
     define: {
         IS_PRODUCTION: env.mode === 'production',
         IS_DISTRIBUTION: false, // TODO
-        __BUILD__:
-            day().format('YYYY.MM.DD.HHmm') +
-            (env.mode === 'production' ? '' : '-dev'),
+        __BUILD__: JSON.stringify(
+            day().format('YYYY.MM.DD.HHmm') + env.mode === 'production'
+                ? ''
+                : '-dev'
+        ),
     },
 
     optimizeDeps: {
