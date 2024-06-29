@@ -6,10 +6,12 @@ Personal template for ES6-based games
 ### Setup
 
 ```shell
-  git clone -o templ git@github.com:zole/template-js-game.git $PROJECT_NAME
+  git clone -o template-origin git@github.com:zole/template-js-game.git $PROJECT_NAME
   cd $PROJECT_NAME
   # Create a working branch
   git checkout -b main
+  # add submodule dependencies, if available
+  git submodule update --init
 ```
 
 ### Update the template for other projects

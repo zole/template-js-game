@@ -5,7 +5,7 @@
     "private": "true",
     "description": "FIXME",
     "author": "FIXME",
-    "source": "src/index.html",
+    "source": "index.html",
     "scripts": {
         "build": "vite build",
         "clean": "rimraf dist/",
@@ -37,6 +37,7 @@
         "@types/react": "^18.3.3",
         "@types/three": "^0.165.0",
         "@vitejs/plugin-react": "^4.3.1",
+        "dayjs": "^1.11.11",
         "prettier": "^3.3.2",
         "rimraf": "^5.0.7",
         "typescript": "^5.5.2",
