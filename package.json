@@ -35,7 +35,7 @@
         "@types/d3-ease": "^3.0.2",
         "@types/lodash-es": "^4.17.12",
         "@types/react": "^18.3.3",
-        "@types/three": "^0.165.0",
+        "@types/three": "^0.169.0",
         "@vitejs/plugin-react": "^4.3.1",
         "dayjs": "^1.11.11",
         "prettier": "^3.3.2",
