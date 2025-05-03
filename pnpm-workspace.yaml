@@ -1,2 +1,6 @@
 packages:
-  - 'lib/'
+  - gamebucket/packages/*
+onlyBuiltDependencies:
+  - '@swc/core'
+  - esbuild
+  - sharp

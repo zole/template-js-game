@@ -10,7 +10,7 @@ Personal template for ES6-based games
   cd $PROJECT_NAME
   # Create a working branch
   git checkout -b main
-  # add submodule dependencies, if available
+  # in order to use unpublished changes to @gamebucket packages:
   git submodule update --init
 ```
 
@@ -34,13 +34,11 @@ Personal template for ES6-based games
 
 ## Library strategy
 
-In order to share code from project to project:
-
-* pnpm resolves the local package for build: 
-  * `pnpm-workspace.yaml` defines `lib/` as a workspace
-  * The root `package.json` depends on `"gamebucket": "workspace:^"` which is resolved to lib/
-  * Dependencies specified in `lib/package.json` will be installed in the root's `node_modules`
-* Typescript also needs to be told about the package so it will pick up the package's
-  own Typescript configs:
-  * `src/tsconfig.json` has `"references": [{ "path": "../lib" }]`
-* There may be a better way to do this, but so far this is where we're at
+In order to share non-project-specific code which is also under development, the
+template includes https://github.com/BucketOSoftware/gamebucket-common as a
+submodule and references the packages in `pnpm-workspace.yaml`. The packages
+need to be built after changes when running locally, e.g.:
+```
+pnpm run -r build
+```
+There may be a better way to do this, but so far this is where we're at.

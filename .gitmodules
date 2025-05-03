@@ -1,4 +1,4 @@
-[submodule "lib"]
-	path = lib
+[submodule "gamebucket"]
+	path = gamebucket
 	url = git@github.com:BucketOSoftware/gamebucket-common.git
 	branch = main

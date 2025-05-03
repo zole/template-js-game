@@ -10,7 +10,6 @@
         "lib": ["esnext", "DOM", "WebWorker"],
         "types": ["vite-plugin-glsl/ext"]
     },
-    "references": [{ "path": "../lib" }],
     "include": ["**/*.ts"],
     "exclude": ["**/unused/**/*"]
 }
