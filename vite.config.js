@@ -25,7 +25,7 @@ export default defineConfig((env) => ({
         __BUILD__: JSON.stringify(
             day().format('YYYY.MM.DD.HHmm') + env.mode === 'production'
                 ? ''
-                : '-dev'
+                : '-dev',
         ),
     },
 
@@ -34,7 +34,13 @@ export default defineConfig((env) => ({
     },
 
     server: {
-        // hmr: true,
+        // Enable cross-origin isolation, which improves security,
+        // increases the precision of performance.now(), and enables
+        // SharedArrayBuffer. These will also need to be sent from your
+        // production server if you use those features. See:
+        // https://developer.mozilla.org/en-US/docs/Web/API/Window/crossOriginIsolated
+        'Cross-Origin-Embedder-Policy': 'require-corp',
+        'Cross-Origin-Opener-Policy': 'same-origin',
     },
 
     build: {
