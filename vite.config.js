@@ -1,7 +1,6 @@
 import day from 'dayjs'
 import { defineConfig } from 'vite'
 
-import react from '@vitejs/plugin-react'
 import glsl from 'vite-plugin-glsl'
 import mkcert from 'vite-plugin-mkcert'
 import topLevelAwait from 'vite-plugin-top-level-await'
@@ -16,8 +15,6 @@ export default defineConfig((env) => ({
         topLevelAwait(),
         // import wasm files
         wasm(),
-        // support react-based interfaces
-        react(),
         // import GLSL shaders
         glsl(),
     ],
