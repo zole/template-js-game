@@ -1,17 +1,15 @@
 {
     "name": "FIXME",
     "version": "1.0.0",
-    "type": "module",
     "private": "true",
     "description": "FIXME",
     "author": "FIXME",
+    "type": "module",
     "source": "index.html",
     "scripts": {
         "build": "vite build",
-        "clean": "rimraf dist/",
         "open": "open -b org.chromium.Chromium --new --args --profile-directory='Development' --enable-precise-memory-info --remote-debugging-port=9222",
         "preview": "vite preview",
-        "size": "vite-bundle-visualizer",
         "start": "vite"
     },
     "prettier": {
@@ -35,6 +33,7 @@
         "rimraf": "^5.0.7",
         "typescript": "^5.7.3",
         "vite": "^6.3.4",
+        "vite-bundle-analyzer": "^0.20.1",
         "vite-plugin-glsl": "^1.3.0",
         "vite-plugin-mkcert": "^1.17.6",
         "vite-plugin-top-level-await": "^1.5.0",

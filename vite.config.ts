@@ -5,6 +5,7 @@ import glsl from 'vite-plugin-glsl'
 import mkcert from 'vite-plugin-mkcert'
 import topLevelAwait from 'vite-plugin-top-level-await'
 import wasm from 'vite-plugin-wasm'
+import { analyzer } from 'vite-bundle-analyzer'
 
 export default defineConfig((env) => ({
     assetsInclude: ['**/*.gltf', '**/*.glb'],
@@ -17,6 +18,9 @@ export default defineConfig((env) => ({
         wasm(),
         // import GLSL shaders
         glsl(),
+        // output bundle size analysis
+        env.mode === 'production' &&
+            analyzer({ analyzerMode: 'static', fileName: '../bundlesize' }),
     ],
 
     define: {
@@ -39,11 +43,13 @@ export default defineConfig((env) => ({
         // SharedArrayBuffer. These will also need to be sent from your
         // production server if you use those features. See:
         // https://developer.mozilla.org/en-US/docs/Web/API/Window/crossOriginIsolated
-        'Cross-Origin-Embedder-Policy': 'require-corp',
-        'Cross-Origin-Opener-Policy': 'same-origin',
+        headers: {
+            'Cross-Origin-Embedder-Policy': 'require-corp',
+            'Cross-Origin-Opener-Policy': 'same-origin',
+        },
     },
 
     build: {
-        sourceMap: true,
+        sourcemap: true,
     },
 }))

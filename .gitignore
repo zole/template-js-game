@@ -2,6 +2,8 @@
 node_modules/
 *.code-workspace
 
+bundlesize.*
+
 dist/
 unused/
 backups/
