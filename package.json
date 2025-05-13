@@ -30,7 +30,7 @@
         "@types/three": "^0.176.0",
         "dayjs": "^1.11.13",
         "prettier": "^3.3.3",
-        "rimraf": "^5.0.7",
+        "rimraf": "^6.0.1",
         "typescript": "^5.8.3",
         "vite": "^6.3.4",
         "vite-bundle-analyzer": "^0.20.1",
