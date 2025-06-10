@@ -29,7 +29,7 @@
         "@tsconfig/recommended": "^1.0.8",
         "@types/three": "^0.177.0",
         "dayjs": "^1.11.13",
-        "prettier": "^3.3.3",
+        "prettier": "^3.5.3",
         "typescript": "^5.8.3",
         "vite": "^6.3.5",
         "vite-bundle-analyzer": "^0.22.1",
