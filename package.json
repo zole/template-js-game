@@ -36,6 +36,6 @@
         "vite-plugin-glsl": "^1.5.1",
         "vite-plugin-mkcert": "^1.17.8",
         "vite-plugin-top-level-await": "^1.6.0",
-        "vite-plugin-wasm": "^3.4.1"
+        "vite-plugin-wasm": "^3.5.0"
     }
 }
