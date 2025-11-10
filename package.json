@@ -32,7 +32,7 @@
         "prettier": "^3.6.2",
         "typescript": "^5.9.2",
         "vite": "^7.1.9",
-        "vite-bundle-analyzer": "^1.2.1",
+        "vite-bundle-analyzer": "^1.2.3",
         "vite-plugin-glsl": "^1.5.4",
         "vite-plugin-mkcert": "^1.17.8",
         "vite-plugin-top-level-await": "^1.6.0",
